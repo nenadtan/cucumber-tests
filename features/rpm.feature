@@ -13,17 +13,17 @@ Feature: RPM>Reports Tab - date widget
     And I enter password as "<password>"
     And I press Log in
     Then I should be logged
-    Then I should be on Main page
+    Then I should be on Home page
     When I click on Reports in main menu
     Then I should be on Reports page
-    When I enter “<date>” as Start date
+    When I enter "<date>" as Start date
     When I click on Start date widget icon
-    Then I should see "<month_year>" and “<day>” selected on the widget
+    Then I should see "<month_year>" and "<day>" selected on the widget
 
 
   Examples:
-  |  user     |  password      |  date      | month_year    | day  |
-  |  nt_pos2  |  Bambus2017,,, | 2018/01/19 | January, 2018 | 19   |
+  |  user         |  password      |  date      | month_year    | day  |
+  |  nt_merchant2 |  Bambus2017,,, | 2018/01/19 | January, 2018 | 19   |
 
 
 #  Scenario Outline: Check if when I select day  I get this day in text area

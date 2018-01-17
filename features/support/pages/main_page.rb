@@ -3,5 +3,7 @@ class MainPage
 
   page_url "https://rpm.gateway.payeezyqa.com/main"
 
-  link(:my-terminals, :text => 'Terminals')
-  link(:rep-link, :text => 'Reports')
+  div(:acc_div, :text => 'Account')
+  link(:rep_link, :text => 'Reports')
+
+end

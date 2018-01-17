@@ -3,6 +3,8 @@ class ReportsPage
 
   page_url "https://admin-ft1.gateway.payeezytest.com/reports"
 
-  link(:my-active, :text => 'Activity')
+  div(:default_report, :text => 'Virtual Terminal Deposits - Closed Batches')
   text_field(:start_f, id: "report_form_start_date")
-  image(:img-st-date, :id => 'report_form_start_date_calendar')
+  image(:img_st_date, :id => 'report_form_start_date_calendar')
+
+end

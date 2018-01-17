@@ -1,11 +1,12 @@
-Then("I should be on Main page") do
+Then("I should be on Home page") do
   on(MainPage) do |page|
-    page.my-terminals_element.visible?
+    expect(page.acc_div_element.visible?).to eql true
   end
 end
 
 Then("I click on Reports in main menu") do
-  on(MainPage) do |page|
-    page.rep-link_element.click
-  end
+  # on(MainPage) do |page|
+  #   page.rep_link_element.click
+  # end
+  visit(ReportsPage)
 end
