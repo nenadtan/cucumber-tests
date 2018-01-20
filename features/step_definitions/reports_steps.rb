@@ -17,6 +17,14 @@ When("I click on Start date widget icon") do
   end
 end
 
-Then("I should see {string} and {string} selected on the widget") do |string, string2|
-
+Then("I should see {string} and {string} selected on the widget") do |month_year, day|
+  on(ReportsPage) do |page|
+    myday=day
+    mymny=month_year
+#Proveravam  da li je poslati dan selektovan
+    page.check_day = mymny
+    page.check_day = myday
+  #expect(page.check_day_element.visible?).to eql true
+  end
 end
+

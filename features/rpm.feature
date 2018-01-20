@@ -10,20 +10,19 @@ Feature: RPM>Reports Tab - date widget
   Scenario Outline: Check if I enter date in text area do I get expected selection in the widget
     Given I open login page of RPM - First Data
     When I enter username as "<user>"
-    And I enter password as "<password>"
-    And I press Log in
-    Then I should be logged
+     And I enter password as "<password>"
+     And I press Log in
     Then I should be on Home page
     When I click on Reports in main menu
     Then I should be on Reports page
     When I enter "<date>" as Start date
-    When I click on Start date widget icon
+     And I click on Start date widget icon
     Then I should see "<month_year>" and "<day>" selected on the widget
 
 
   Examples:
   |  user         |  password      |  date      | month_year    | day  |
-  |  nt_merchant2 |  Bambus2017,,, | 2018/01/19 | January, 2018 | 19   |
+  |  nt_merchant2 |  Bambus2017,,, | 2018/01/14 | January, 2018 | 14   |
 
 
 #  Scenario Outline: Check if when I select day  I get this day in text area
