@@ -17,12 +17,16 @@ Feature: RPM>Reports Tab - date widget
     Then I should be on Reports page
     When I enter "<date>" as Start date
      And I click on Start date widget icon
-    Then I should see "<month_year>" and "<day>" selected on the widget
+    Then I should see "<day>" day selected on the widget
+     And I should see "<month_year>" month year selected on the widget
 
 
   Examples:
   |  user         |  password      |  date      | month_year    | day  |
   |  nt_merchant2 |  Bambus2017,,, | 2018/01/14 | January, 2018 | 14   |
+  |  nt_merchant2 |  Bambus2017,,, | 2018/01/16 | January, 2018 | 16   |
+  |  nt_merchant2 |  Bambus2017,,, | 2018/01/18 | January, 2018 | 18   |
+  |  nt_merchant2 |  Bambus2017,,, | 2018/01/20 | January, 2018 | 20   |
 
 
 #  Scenario Outline: Check if when I select day  I get this day in text area

@@ -17,14 +17,30 @@ When("I click on Start date widget icon") do
   end
 end
 
-Then("I should see {string} and {string} selected on the widget") do |month_year, day|
+Then("I should see {string} day selected on the widget") do |day|
   on(ReportsPage) do |page|
-    myday=day
-    mymny=month_year
-#Proveravam  da li je poslati dan selektovan
-    page.check_day = mymny
-    page.check_day = myday
-  #expect(page.check_day_element.visible?).to eql true
+    #U zagradi prvo pomocu klase lociras element a nakon toga uzimas tekst da li je tekst onaj tekst koji ocekujes
+    # (poslat kao parametar)
+    # PRVO: Kako ja da nadjem element?
+    # DRUGO: Sta da radim?
+    expect(page.check_day_element.text).to eql day
   end
 end
+
+And("I should see {string} month year selected on the widget") do |month_year|
+  on(ReportsPage) do |page|
+    expect(page.check_title_element.text).to eql month_year
+  end
+end
+
+# Then("I should see {string} and {string} selected on the widget") do |month_year, day|
+#   on(ReportsPage) do |page|
+#     myday=day
+#     mymny=month_year
+# #Proveravam  da li je poslati dan selektovan
+#     page.check_day = mymny
+#     page.check_day = myday
+#   #expect(page.check_day_element.visible?).to eql true
+#   end
+# end
 

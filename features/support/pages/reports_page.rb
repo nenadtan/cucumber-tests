@@ -7,5 +7,6 @@ class ReportsPage
   text_field(:start_f, id: "report_form_start_date")
   image(:img_st_date, :id => 'report_form_start_date_calendar')
   cell(:check_day, :class => 'day selected')
+  cell(:check_title, :class => 'title')
 
 end
