@@ -14,6 +14,14 @@ When("I enter password as {string}") do |password|
 
 end
 
+And("I enter username {string} and password {string}") do |username, password|
+  on(LoginPage) do |page|
+    page.login_name = username
+    page.password = password
+  end
+
+end
+
 When("I press Log in") do
   on(LoginPage) do |page|
     page.login_element.click

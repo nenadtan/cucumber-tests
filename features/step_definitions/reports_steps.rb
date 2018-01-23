@@ -1,3 +1,9 @@
+# PRVO: Kako ja da nadjem element? (U vecini slucajeva se nalazi u Pages)
+# DRUGO: Sta da radim?
+#      a) U slucaju When iniciran neku akciju kao sto je npr. click, ubaciti neki tekst
+#      b) U slucaju Then, u slucaju provere proveravam kao da je nest <>, postoji,...itd.
+
+
 Then("I should be on Reports page") do
   on(ReportsPage) do |page|
     sleep 2
@@ -21,9 +27,16 @@ Then("I should see {string} day selected on the widget") do |day|
   on(ReportsPage) do |page|
     #U zagradi prvo pomocu klase lociras element a nakon toga uzimas tekst da li je tekst onaj tekst koji ocekujes
     # (poslat kao parametar)
-    # PRVO: Kako ja da nadjem element?
-    # DRUGO: Sta da radim?
+
+    # Ocekujem da je to sto proveravam jednako elementu koji je poslat. Ukoliko nije, dolazi do prekida izvrsavanja
+    # 1) nalazenje elementa
+    # 2) daj mi text to elementa
+    # 3) proveri da li je vrednost jednaka parametru koji je poslat tj. dat. Ukoliko nije, dolazi do prekida izvrsavanja.
     expect(page.check_day_element.text).to eql day
+
+    # if page.check_day_element.text != day
+    #   puts "Problem"
+    # end
   end
 end
 
