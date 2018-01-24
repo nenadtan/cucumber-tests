@@ -57,3 +57,12 @@ end
 #   end
 # end
 
+And("I select “{int}” day on the widget") do |day|
+  on(ReportsPage) do |page|
+    expect(page.check_day_element.click) == day
+    puts "OK"
+  end
+end
+
+
+
